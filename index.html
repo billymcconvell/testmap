@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/kab_selayar_0.js"></script>
+        <script src="data/barang2laiyolo_1.js"></script>
+        <script src="data/selayar_2.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[-7.80096817199,120.142490806],[-5.86205063037,123.465863504]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.addAttribution('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        function pop_kab_selayar_0(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ID_0'] !== null ? Autolinker.link(String(feature.properties['ID_0'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ISO'] !== null ? Autolinker.link(String(feature.properties['ISO'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['NAME_0'] !== null ? Autolinker.link(String(feature.properties['NAME_0'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ID_1'] !== null ? Autolinker.link(String(feature.properties['ID_1'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['NAME_1'] !== null ? Autolinker.link(String(feature.properties['NAME_1'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ID_2'] !== null ? Autolinker.link(String(feature.properties['ID_2'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['NAME_2'] !== null ? Autolinker.link(String(feature.properties['NAME_2'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['VARNAME_2'] !== null ? Autolinker.link(String(feature.properties['VARNAME_2'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['NL_NAME_2'] !== null ? Autolinker.link(String(feature.properties['NL_NAME_2'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['HASC_2'] !== null ? Autolinker.link(String(feature.properties['HASC_2'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CC_2'] !== null ? Autolinker.link(String(feature.properties['CC_2'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['TYPE_2'] !== null ? Autolinker.link(String(feature.properties['TYPE_2'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ENGTYPE_2'] !== null ? Autolinker.link(String(feature.properties['ENGTYPE_2'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['VALIDFR_2'] !== null ? Autolinker.link(String(feature.properties['VALIDFR_2'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['VALIDTO_2'] !== null ? Autolinker.link(String(feature.properties['VALIDTO_2'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['REMARKS_2'] !== null ? Autolinker.link(String(feature.properties['REMARKS_2'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Shape_Leng'] !== null ? Autolinker.link(String(feature.properties['Shape_Leng'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Shape_Area'] !== null ? Autolinker.link(String(feature.properties['Shape_Area'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_kab_selayar_0_0() {
+            return {
+                pane: 'pane_kab_selayar_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(202,202,202,1.0)',
+            }
+        }
+        map.createPane('pane_kab_selayar_0');
+        map.getPane('pane_kab_selayar_0').style.zIndex = 400;
+        map.getPane('pane_kab_selayar_0').style['mix-blend-mode'] = 'normal';
+        var layer_kab_selayar_0 = new L.geoJson(json_kab_selayar_0, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_kab_selayar_0',
+            onEachFeature: pop_kab_selayar_0,
+            style: style_kab_selayar_0_0,
+        });
+        bounds_group.addLayer(layer_kab_selayar_0);
+        map.addLayer(layer_kab_selayar_0);
+        function pop_barang2laiyolo_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? Autolinker.link(String(feature.properties['name'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_barang2laiyolo_1_0() {
+            return {
+                pane: 'pane_barang2laiyolo_1',
+                radius: 4.8,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 4.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,255,255,1.0)',
+            }
+        }
+        map.createPane('pane_barang2laiyolo_1');
+        map.getPane('pane_barang2laiyolo_1').style.zIndex = 401;
+        map.getPane('pane_barang2laiyolo_1').style['mix-blend-mode'] = 'normal';
+        var layer_barang2laiyolo_1 = new L.geoJson(json_barang2laiyolo_1, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_barang2laiyolo_1',
+            onEachFeature: pop_barang2laiyolo_1,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_barang2laiyolo_1_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_barang2laiyolo_1);
+        map.addLayer(layer_barang2laiyolo_1);
+        function pop_selayar_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? Autolinker.link(String(feature.properties['name'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_selayar_2_0() {
+            return {
+                pane: 'pane_selayar_2',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '1,5',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 3.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(251,56,95,0.0)',
+            }
+        }
+        map.createPane('pane_selayar_2');
+        map.getPane('pane_selayar_2').style.zIndex = 402;
+        map.getPane('pane_selayar_2').style['mix-blend-mode'] = 'normal';
+        var layer_selayar_2 = new L.geoJson(json_selayar_2, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_selayar_2',
+            onEachFeature: pop_selayar_2,
+            style: style_selayar_2_0,
+        });
+        bounds_group.addLayer(layer_selayar_2);
+        map.addLayer(layer_selayar_2);
+        setBounds();
+        </script>
+    </body>
+</html>
